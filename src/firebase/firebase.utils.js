@@ -3,20 +3,25 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: 'AIzaSyDzo4Njk4YeKyR5M8LHCqR9fyifwDjSyOg',
-  authDomain: 'crwn-ecommerce-4a048.firebaseapp.com',
-  databaseURL: 'https://crwn-ecommerce-4a048.firebaseio.com',
-  projectId: 'crwn-ecommerce-4a048',
-  storageBucket: 'crwn-ecommerce-4a048.appspot.com',
-  messagingSenderId: '451010815900',
-  appId: '1:451010815900:web:2d80521c114a5725f48a59',
+  apiKey: 'AIzaSyAiXI_GL1Z4dvwfsN0956_RRztkwOOwCEo',
+  authDomain: 'crwn-ecommerce-b7b90.firebaseapp.com',
+  databaseURL: 'https://crwn-ecommerce-b7b90.firebaseio.com',
+  projectId: 'crwn-ecommerce-b7b90',
+  storageBucket: 'crwn-ecommerce-b7b90.appspot.com',
+  messagingSenderId: '803936176328',
+  appId: '1:803936176328:web:f32ccee830796760a83dfd',
 };
 
+//create a new user after signin if user does not exist
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
+  // get the user from db
   const useRef = firestore.doc(`users/${userAuth.uid}`);
 
+  // get the user from db
   const snapShot = await useRef.get();
+  //if the user does not exist create a new one, else retutn the user
+  //exists is a property in the snapShort object
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();

@@ -27,20 +27,15 @@ class App extends Component {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot((snapShot) => {
-          this.setState(
-            {
-              currentUser: {
-                id: snapShot.id,
-                ...snapShot.data(),
-              },
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
             },
-            () => {
-              console.log(this.state);
-            }
-          );
+          });
         });
       } else {
-        //if there is no Authenticated
+        //if there is no Authenticated user
         this.setState({ currentUser: userAuth });
       }
     });
@@ -56,9 +51,9 @@ class App extends Component {
           {/* we need to make our header aware of a user's auth changes */}
           <Header currentUser={this.state.currentUser} />
           <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route exact path='/shop' component={ShopPage} />
-            <Route exact path='/signin' component={SignInAndSignUpPage} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/shop" component={ShopPage} />
+            <Route exact path="/signin" component={SignInAndSignUpPage} />
           </Switch>
         </Router>
       </>
