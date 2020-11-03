@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
 
+  input {
+    background-color: transparent !important;
+  }
+
   .title {
     margin: 10px 0;
   }

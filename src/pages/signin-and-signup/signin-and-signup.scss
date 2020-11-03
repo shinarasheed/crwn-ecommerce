@@ -5,3 +5,11 @@
   margin: 30px auto;
   flex-wrap: wrap;
 }
+
+input {
+  background-color: #fff !important;
+}
+
+input[type='email'] {
+  background-color: transparent !important;
+}
