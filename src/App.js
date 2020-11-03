@@ -35,7 +35,6 @@ class App extends Component {
           });
         });
       } else {
-        //if there is no Authenticated user
         this.setState({ currentUser: userAuth });
       }
     });
