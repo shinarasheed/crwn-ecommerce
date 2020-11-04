@@ -10,18 +10,10 @@ const CollectionPreview = ({ title, items }) => {
         {/* performance bottleneck */}
         {/* anonymous functions keep getting called again whenever the components renders*/}
         {items
-          // dont really fully understand the chaining
           .filter((item, index) => index < 4)
-          .map(({ id, ...otherItemProps }) => (
-            <CollectionItem key={id} {...otherItemProps} />
+          .map((item) => (
+            <CollectionItem key={item.id} item={item} />
           ))}
-
-        {/* {items
-          // dont really fully understand the chaining
-          .slice(0, 4)
-          .map(({ id, ...otherItemProps }) => (
-            <CollectionItem key={id} {...otherItemProps} />
-          ))} */}
       </div>
     </div>
   );
