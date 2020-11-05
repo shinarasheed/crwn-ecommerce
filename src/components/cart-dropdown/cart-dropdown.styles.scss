@@ -4,6 +4,7 @@
   height: 340px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px;
   border: 1px solid #000;
   background-color: #fff;
@@ -11,6 +12,12 @@
   right: 20px;
   z-index: 5;
   overflow: auto;
+
+  .empty-message {
+    font-size: 18px;
+    margin-top: 50px;
+    display: inline-block;
+  }
 
   button {
     margin-top: auto;
