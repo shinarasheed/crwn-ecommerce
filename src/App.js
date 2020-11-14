@@ -18,6 +18,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { selectCurrentUser } from './components/redux/user/user.selectors';
 import './App.scss';
+
 class App extends Component {
   unsubscribeFromAuth = null;
 
@@ -48,7 +49,8 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/shop" component={ShopPage} />
+            {/* why does the nested collection page route only work with path of shop being just path not exact path */}
+            <Route path="/shop" component={ShopPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route
               exact
