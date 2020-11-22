@@ -17,6 +17,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { selectCurrentUser } from './components/redux/user/user.selectors';
+
 import './App.scss';
 
 class App extends Component {
